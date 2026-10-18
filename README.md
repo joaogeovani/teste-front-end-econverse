@@ -86,6 +86,12 @@ npm.cmd run preview
 
 Isso permite executar o projeto sem alterar as configurações de segurança do PowerShell.
 
+## Visualização online
+
+O projeto também está disponível na Vercel e pode ser acessado diretamente pelo navegador, sem necessidade de instalação.
+
+**[Acessar projeto online](https://teste-front-end-econverse-two.vercel.app)**
+
 ## Testes
 
 Não foram configurados testes automatizados. Os testes foram realizados manualmente, verificando:
