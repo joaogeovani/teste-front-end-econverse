@@ -53,17 +53,6 @@ Acesse o endereço informado pelo Vite no terminal, normalmente:
 
 `http://localhost:5173/`
 
-**Observação para usuários do Windows**
-
-Se o PowerShell bloquear a execução do `npm` por causa da política de scripts, utilize `npm.cmd` no lugar de `npm`:
-
-```powershell
-npm.cmd install
-npm.cmd run dev
-```
-
-Isso permite executar o projeto sem alterar as configurações de segurança do PowerShell.
-
 ## Build
 
 Para compilar o projeto:
@@ -83,6 +72,19 @@ npm run preview
 O Vite disponibiliza um endereço local para acessar a aplicação, normalmente:
 
 `http://localhost:4173/`
+
+**Observação para usuários do Windows**
+
+Se o PowerShell bloquear a execução do `npm` por causa da política de scripts, utilize `npm.cmd` no lugar de `npm`:
+
+```powershell
+npm.cmd install
+npm.cmd run dev
+npm.cmd run build
+npm.cmd run preview
+```
+
+Isso permite executar o projeto sem alterar as configurações de segurança do PowerShell.
 
 ## Testes
 
