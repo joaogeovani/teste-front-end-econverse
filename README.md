@@ -53,7 +53,16 @@ Acesse o endereço informado pelo Vite no terminal, normalmente:
 
 `http://localhost:5173/`
 
-No Windows, caso o PowerShell bloqueie o comando `npm`, é possível utilizar `npm.cmd run dev`.
+**Observação para usuários do Windows**
+
+Se o PowerShell bloquear a execução do `npm` por causa da política de scripts, utilize `npm.cmd` no lugar de `npm`:
+
+```powershell
+npm.cmd install
+npm.cmd run dev
+```
+
+Isso permite executar o projeto sem alterar as configurações de segurança do PowerShell.
 
 ## Build
 
