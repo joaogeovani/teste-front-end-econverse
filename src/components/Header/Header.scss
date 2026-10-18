@@ -1,0 +1,273 @@
+.site-header {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: #ffffff;
+  font-family: "Poppins", sans-serif;
+
+  &__benefits {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 119px;
+    border-bottom: 1px solid #f0f0f0;
+
+    span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #9f9f9f;
+      white-space: nowrap;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    strong {
+      color: #3019b2;
+      font-weight: 600;
+    }
+  }
+
+  &__top {
+    height: 72px;
+    display: grid;
+    grid-template-columns: 139px 1fr 216px;
+    align-items: center;
+    column-gap: 24px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    width: 139px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+
+    width: 100%;
+    max-width: 630px;
+    height: 48px;
+
+    border-radius: 10px;
+    background: #f7f5f2;
+    overflow: hidden;
+
+    input {
+      flex: 1;
+      min-width: 0;
+      height: 100%;
+      padding: 0 16px;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 14px;
+      color: #333;
+
+      &::placeholder {
+        color: #9f9f9f;
+      }
+    }
+
+    button {
+      width: 56px;
+      height: 100%;
+      border: none;
+      background: transparent;
+      color: #9f9f9f;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    button img {
+      display: block;
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 216px;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+
+      img {
+        display: block;
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+
+  &__nav {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 16px;
+    border-top: 1px solid #f0f0f0;
+    box-shadow: 0 8px 16px rgba(57, 48, 19, 0.12);
+
+    a {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 18px;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      color: #9f9f9f;
+
+      &:hover {
+        color: #3019b2;
+      }
+    }
+  }
+
+  &__nav-highlight {
+    color: #3019b2 !important;
+  }
+
+  &__subscription {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    img {
+      display: block;
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    &__benefits {
+      gap: 16px;
+      padding: 0 12px;
+
+      span {
+        font-size: 10px;
+      }
+    }
+
+    &__top {
+      height: auto;
+      flex-wrap: wrap;
+      padding: 16px;
+    }
+
+    &__search {
+      order: 3;
+      width: 100%;
+    }
+
+    &__nav {
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding: 0 16px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    &__benefits {
+      justify-content: flex-start;
+      gap: 16px;
+      overflow-x: auto;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      span {
+        flex-shrink: 0;
+      }
+    }
+
+    &__top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      padding: 12px 16px;
+    }
+
+    &__logo {
+      width: 120px;
+      max-width: 100%;
+    }
+
+    &__actions {
+      width: auto;
+      gap: 8px;
+
+      button,
+      button img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &__search {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      width: 100%;
+      max-width: none;
+      height: 42px;
+    }
+
+    &__nav {
+      width: 100%;
+      overflow-x: auto;
+      justify-content: flex-start;
+      gap: 20px;
+      padding: 0 16px;
+
+      a {
+        flex-shrink: 0;
+      }
+    }
+  }
+}
