@@ -1,4 +1,4 @@
-# Teste Front-End Júnior — Econverse
+# Teste Front-End Júnior - Econverse
 
 Projeto desenvolvido para o teste técnico de Front-End Júnior da Econverse.
 
@@ -131,7 +131,7 @@ src/
 
 ## Layout de referência
 
-[Figma — Teste Front-End Júnior](https://www.figma.com/file/rWnzPeoxgynuNPsJjV0VmV/Teste-Front-End-Jr?node-id=0%3A1)
+[Figma - Teste Front-End Júnior](https://www.figma.com/file/rWnzPeoxgynuNPsJjV0VmV/Teste-Front-End-Jr?node-id=0%3A1)
 
 ## Versão
 
