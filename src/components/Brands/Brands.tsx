@@ -1,6 +1,5 @@
-
-import econverseLogo from '../../assets/icons/Logo-econverse.svg';
-import './Brands.scss';
+import econverseLogo from "../../assets/icons/Logo-econverse.svg";
+import "./Brands.scss";
 
 const brands = [1, 2, 3, 4, 5];
 
@@ -14,11 +13,7 @@ function Brands() {
       <div className="brands__list">
         {brands.map((brand) => (
           <div className="brands__item" key={brand}>
-            <img
-              src={econverseLogo}
-              alt="Econverse"
-              className="brands__logo"
-            />
+            <img src={econverseLogo} alt="Econverse" className="brands__logo" />
           </div>
         ))}
       </div>

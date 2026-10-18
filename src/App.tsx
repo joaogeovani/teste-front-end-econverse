@@ -17,10 +17,7 @@ function App() {
         <Categories />
 
         {/* Primeira vitrine */}
-        <Products
-          id="produtos"
-          variant="categories"
-        />
+        <Products id="produtos" variant="categories" />
 
         {/* Primeiro banner de parceiros */}
         <Partners />

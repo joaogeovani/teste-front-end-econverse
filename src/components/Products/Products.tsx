@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import ProductCard, { type Product } from "../ProductCard/ProductCard";
 import ProductModal from "../ProductModal/ProductModal";
@@ -29,10 +28,7 @@ const tabs = [
   "Ver todos",
 ];
 
-function Products({
-  id,
-  variant = "categories",
-}: ProductsProps) {
+function Products({ id, variant = "categories" }: ProductsProps) {
   // Lista de produtos recebidos do JSON
   const [products, setProducts] = useState<Product[]>([]);
 
@@ -47,12 +43,11 @@ function Products({
   const [error, setError] = useState("");
 
   // Produto selecionado para o modal
-  const [selectedProduct, setSelectedProduct] =
-    useState<Product | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   // Identifica se a tela está no modo mobile
   const [isMobile, setIsMobile] = useState(
-    () => window.matchMedia("(max-width: 768px)").matches
+    () => window.matchMedia("(max-width: 768px)").matches,
   );
 
   // Observa mudanças no tamanho da tela
@@ -66,10 +61,7 @@ function Products({
     mediaQuery.addEventListener("change", handleScreenChange);
 
     return () => {
-      mediaQuery.removeEventListener(
-        "change",
-        handleScreenChange
-      );
+      mediaQuery.removeEventListener("change", handleScreenChange);
     };
   }, []);
 
@@ -97,11 +89,7 @@ function Products({
       } catch (err) {
         if (controller.signal.aborted) return;
 
-        setError(
-          err instanceof Error
-            ? err.message
-            : "Erro inesperado."
-        );
+        setError(err instanceof Error ? err.message : "Erro inesperado.");
       } finally {
         if (!controller.signal.aborted) {
           setLoading(false);
@@ -118,36 +106,27 @@ function Products({
   const productsPerPage = isMobile ? 1 : 4;
 
   // Último índice permitido no carrossel
-  const maxIndex = Math.max(
-    0,
-    products.length - productsPerPage
-  );
+  const maxIndex = Math.max(0, products.length - productsPerPage);
 
   // Corrige o índice quando a tela muda de tamanho
   useEffect(() => {
-    setCurrentIndex((index) =>
-      Math.min(index, maxIndex)
-    );
+    setCurrentIndex((index) => Math.min(index, maxIndex));
   }, [maxIndex]);
 
   // Seleciona os produtos que serão exibidos
   const visibleProducts = products.slice(
     currentIndex,
-    currentIndex + productsPerPage
+    currentIndex + productsPerPage,
   );
 
   // Avança um produto
   function handleNext() {
-    setCurrentIndex((index) =>
-      Math.min(index + 1, maxIndex)
-    );
+    setCurrentIndex((index) => Math.min(index + 1, maxIndex));
   }
 
   // Volta um produto
   function handlePrevious() {
-    setCurrentIndex((index) =>
-      Math.max(0, index - 1)
-    );
+    setCurrentIndex((index) => Math.max(0, index - 1));
   }
 
   // Abre o modal com o produto selecionado
@@ -161,28 +140,20 @@ function Products({
   }
 
   return (
-    <section
-      className={`products products--${variant}`}
-      id={id}
-    >
+    <section className={`products products--${variant}`} id={id}>
       <div className="products__heading">
         <h2>Produtos relacionados</h2>
       </div>
 
       {/* Primeira vitrine: abas de categorias */}
       {variant === "categories" ? (
-        <div
-          className="products__tabs"
-          aria-label="Categorias de produtos"
-        >
+        <div className="products__tabs" aria-label="Categorias de produtos">
           {tabs.map((tab) => (
             <button
               key={tab}
               type="button"
               className={`products__tab ${
-                activeTab === tab
-                  ? "products__tab--active"
-                  : ""
+                activeTab === tab ? "products__tab--active" : ""
               }`}
               onClick={() => setActiveTab(tab)}
             >
@@ -238,10 +209,7 @@ function Products({
       )}
 
       {/* Modal de detalhes do produto */}
-      <ProductModal
-        product={selectedProduct}
-        onClose={handleCloseModal}
-      />
+      <ProductModal product={selectedProduct} onClose={handleCloseModal} />
     </section>
   );
 }

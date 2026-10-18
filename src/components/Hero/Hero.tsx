@@ -1,5 +1,4 @@
-
-import './Hero.scss';
+import "./Hero.scss";
 
 function Hero() {
   return (

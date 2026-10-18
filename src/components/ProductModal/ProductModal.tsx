@@ -1,12 +1,11 @@
+import { useEffect, useRef, useState } from "react";
+import type { MouseEvent } from "react";
+import type { Product } from "../ProductCard/ProductCard";
 
-import { useEffect, useRef, useState } from 'react';
-import type { MouseEvent } from 'react';
-import type { Product } from '../ProductCard/ProductCard';
+import minusIcon from "../../assets/icons/Minus.svg";
+import plusIcon from "../../assets/icons/Plus.svg";
 
-import minusIcon from '../../assets/icons/Minus.svg';
-import plusIcon from '../../assets/icons/Plus.svg';
-
-import './ProductModal.scss';
+import "./ProductModal.scss";
 
 interface ProductModalProps {
   product: Product | null;
@@ -23,20 +22,20 @@ function ProductModal({ product, onClose }: ProductModalProps) {
     const previousOverflow = document.body.style.overflow;
     const previousFocus = document.activeElement as HTMLElement | null;
 
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
     closeButtonRef.current?.focus();
 
     function handleKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape') {
+      if (event.key === "Escape") {
         onClose();
       }
     }
 
-    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener("keydown", handleKeyDown);
 
     return () => {
       document.body.style.overflow = previousOverflow;
-      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener("keydown", handleKeyDown);
       previousFocus?.focus();
     };
   }, [product, onClose]);
@@ -47,9 +46,9 @@ function ProductModal({ product, onClose }: ProductModalProps) {
 
   if (!product) return null;
 
-  const formattedPrice = new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
+  const formattedPrice = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
   }).format(product.price);
 
   function handleOverlayClick(event: MouseEvent<HTMLDivElement>) {
@@ -68,17 +67,14 @@ function ProductModal({ product, onClose }: ProductModalProps) {
 
   function handleBuy() {
     // Integração de checkout não faz parte do JSON fornecido.
-    console.log('Comprar produto:', {
+    console.log("Comprar produto:", {
       product,
       quantity,
     });
   }
 
   return (
-    <div
-      className="product-modal__overlay"
-      onMouseDown={handleOverlayClick}
-    >
+    <div className="product-modal__overlay" onMouseDown={handleOverlayClick}>
       <section
         className="product-modal"
         role="dialog"
@@ -106,16 +102,11 @@ function ProductModal({ product, onClose }: ProductModalProps) {
 
         <div className="product-modal__details">
           <div className="product-modal__heading">
-            <h2
-              id="product-modal-title"
-              className="product-modal__title"
-            >
+            <h2 id="product-modal-title" className="product-modal__title">
               {product.productName}
             </h2>
 
-            <p className="product-modal__price">
-              {formattedPrice}
-            </p>
+            <p className="product-modal__price">{formattedPrice}</p>
           </div>
 
           <div className="product-modal__description-area">
@@ -146,7 +137,7 @@ function ProductModal({ product, onClose }: ProductModalProps) {
               </button>
 
               <span aria-live="polite">
-                {String(quantity).padStart(2, '0')}
+                {String(quantity).padStart(2, "0")}
               </span>
 
               <button

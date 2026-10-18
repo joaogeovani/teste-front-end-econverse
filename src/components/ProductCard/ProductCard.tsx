@@ -1,5 +1,4 @@
-
-import './ProductCard.scss';
+import "./ProductCard.scss";
 
 export interface Product {
   productName: string;
@@ -14,9 +13,9 @@ interface ProductCardProps {
 }
 
 function ProductCard({ product, onSelect }: ProductCardProps) {
-  const formattedPrice = new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
+  const formattedPrice = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
   }).format(product.price);
 
   return (
@@ -36,14 +35,10 @@ function ProductCard({ product, onSelect }: ProductCardProps) {
       </button>
 
       <div className="product-card__content">
-        <h3 className="product-card__name">
-          {product.descriptionShort}
-        </h3>
+        <h3 className="product-card__name">{product.descriptionShort}</h3>
 
         <div className="product-card__pricing">
-          <span className="product-card__price">
-            {formattedPrice}
-          </span>
+          <span className="product-card__price">{formattedPrice}</span>
         </div>
 
         <button

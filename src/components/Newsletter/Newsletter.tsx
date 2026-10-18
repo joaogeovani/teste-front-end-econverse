@@ -1,4 +1,3 @@
-
 import { useState, type FormEvent } from "react";
 import "./Newsletter.scss";
 
@@ -13,31 +12,23 @@ function Newsletter() {
 
     // Ainda não existe uma API de inscrição.
     setMessage(
-      "Formulário validado. O cadastro da newsletter ainda não está disponível."
+      "Formulário validado. O cadastro da newsletter ainda não está disponível.",
     );
   }
 
   return (
-    <section
-      className="newsletter"
-      aria-labelledby="newsletter-title"
-    >
+    <section className="newsletter" aria-labelledby="newsletter-title">
       <div className="newsletter__container">
         <div className="newsletter__content">
-          <h2 id="newsletter-title">
-            Inscreva-se na nossa newsletter
-          </h2>
+          <h2 id="newsletter-title">Inscreva-se na nossa newsletter</h2>
 
           <p>
-            Assine a nossa newsletter e receba as novidades
-            e conteúdos exclusivos da Econverse.
+            Assine a nossa newsletter e receba as novidades e conteúdos
+            exclusivos da Econverse.
           </p>
         </div>
 
-        <form
-          className="newsletter__form"
-          onSubmit={handleSubmit}
-        >
+        <form className="newsletter__form" onSubmit={handleSubmit}>
           <div className="newsletter__fields">
             <label className="newsletter__sr-only" htmlFor="newsletter-name">
               Nome
@@ -71,9 +62,7 @@ function Newsletter() {
               required
             />
 
-            <button type="submit">
-              Inscrever
-            </button>
+            <button type="submit">Inscrever</button>
           </div>
 
           <label className="newsletter__terms">

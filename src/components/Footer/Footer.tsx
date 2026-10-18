@@ -1,4 +1,3 @@
-
 import logo from "../../assets/icons/Logo-econverse.svg";
 import instagram from "../../assets/icons/Instagram.svg";
 import facebook from "../../assets/icons/Facebook.svg";
@@ -9,19 +8,11 @@ import "./Footer.scss";
 const footerGroups = [
   {
     title: "Institucional",
-    links: [
-      "Sobre Nós",
-      "Movimento",
-      "Trabalhe conosco",
-    ],
+    links: ["Sobre Nós", "Movimento", "Trabalhe conosco"],
   },
   {
     title: "Ajuda",
-    links: [
-      "Suporte",
-      "Fale Conosco",
-      "Perguntas Frequentes",
-    ],
+    links: ["Suporte", "Fale Conosco", "Perguntas Frequentes"],
   },
   {
     title: "Termos",
@@ -39,21 +30,11 @@ function Footer() {
       <div className="footer__main">
         <div className="footer__container">
           <div className="footer__brand">
-            <img
-              src={logo}
-              alt="Econverse"
-              className="footer__logo"
-            />
+            <img src={logo} alt="Econverse" className="footer__logo" />
 
-            <p>
-              Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit.
-            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-            <div
-              className="footer__social"
-              aria-label="Redes sociais"
-            >
+            <div className="footer__social" aria-label="Redes sociais">
               <span aria-label="Instagram">
                 <img src={instagram} alt="Instagram" />
               </span>
@@ -68,20 +49,11 @@ function Footer() {
             </div>
           </div>
 
-          <div
-            className="footer__divider"
-            aria-hidden="true"
-          />
+          <div className="footer__divider" aria-hidden="true" />
 
-          <nav
-            className="footer__navigation"
-            aria-label="Navegação do rodapé"
-          >
+          <nav className="footer__navigation" aria-label="Navegação do rodapé">
             {footerGroups.map((group) => (
-              <div
-                className="footer__column"
-                key={group.title}
-              >
+              <div className="footer__column" key={group.title}>
                 <h3>{group.title}</h3>
 
                 <ul>
@@ -98,10 +70,7 @@ function Footer() {
       </div>
 
       <div className="footer__bottom">
-        <p>
-          Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit.
-        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
     </footer>
   );
